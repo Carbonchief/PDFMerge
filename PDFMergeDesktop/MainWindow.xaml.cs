@@ -37,5 +37,17 @@ namespace PDFMergeDesktop
                 }
             }
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtSave.Text = dialog.SelectedPath;
+                }
+            }
+        }
     }
 }
